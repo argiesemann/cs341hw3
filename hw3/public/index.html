@@ -1,0 +1,130 @@
+<!--Andrés Giesemann-->
+<!--CS341 HW1-->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script
+	src=" https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"/>
+	</script>
+	<link rel="stylesheet" href="stylesheets\cheesecake.css">
+	<h1>Cheesecake Order Form</h1>
+	
+</head>
+<body>
+
+	<!--Cheesecake image to be displayed at the top of the website-->
+	<img src="data:image/jpeg;base64,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">
+	
+	<!--The drop-down menu and radio buttons are contained within this table for formatting-->
+	<table id="orderSpecTable">
+		  <tr>
+			<td>Quantity</td>
+			<td>Topping</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td>
+				<input type="radio" name="topping" value="plain"> Plain<br>
+			</td>
+		  </tr>
+		  <tr>
+			<td>
+				<select id="quantitySelector">
+					<option value="one">1</option>
+					<option value="two">2</option>
+					<option value="three">3</option>
+				</select>
+			</td>
+			<td>
+				<input type="radio" name="topping" value="cherry"> Cherry<br>
+			</td>
+		  </tr>
+		  <tr>
+			<td></td>
+			<td>
+				<input type="radio" name="topping" value="chocolate"> Chocolate<br>
+			</td>
+		  </tr>
+	</table>
+	
+	<p id="notesHeaderText">Notes:</p>
+	
+	<textarea id="notes" rows="4" cols="50">Enter any special instructions here.
+	</textarea>
+	
+	<p id="buttonWrapper"><input id="orderButton" type="button" value="Order"></p>
+	
+	<ul id="thisOrderInfo">
+		<li id="toppingInfo"></li>
+		<li id="quantityInfo"></li>
+		<li id="notesInfo"></li>
+	</ul>
+	
+	<script>
+	$(document).ready(function(){
+	
+		$("#thisOrderInfo").hide();
+	
+		$("#orderButton").click(function() {
+			
+			var notes = $("#notes").val();
+			
+			if (notes.toLowerCase().includes("vegan")) {
+				alert("This cheesecake contains dairy!");
+			}
+			
+			else {
+			
+				$("#orderSpecTable").hide();
+				$("#notesHeaderText").hide();
+				$("#notes").hide();
+				$("#orderButton").hide();
+				
+				$("#buttonWrapper").append("<p id=\"orderConfirmation\">Thank you! Your order has been placed.</p>");
+				
+				var topping = $("input[name=topping]:checked").val();
+				$("#toppingInfo").text("Topping: " + topping);
+				
+				var quantity = $("#quantitySelector").children("option:selected").text();
+				$("#quantityInfo").text("Quantity: " + quantity);
+				
+				var notes = $("#notes").val();
+				$("#notesInfo").text("Notes: " + notes);
+				
+				$("#thisOrderInfo").show();
+				
+			}
+		});
+	});
+	</script>
+	
+	
+	<table id="monthStatsFormatter">
+		<td><h3>Orders for </h3></td>
+		<td>
+			<select id="monthSelector" style="overflow:auto">
+				<option value="January">Jan</option>
+				<option value="February">Feb</option>
+				<option value="March">Mar</option>
+				<option value="April">Apr</option>
+				<option value="May">May</option>
+				<option value="June">Jun</option>
+				<option value="July">Jul</option>
+				<option value="August">Aug</option>
+				<option value="September">Sep</option>
+				<option value="October">Oct</option>
+				<option value="November">Nov</option>
+				<option value="December">Dec</option>
+			</select>
+		</td>
+	</table>
+	
+	<ul>
+		<li>11 cherry</li>
+		<li>17 chocolate</li>
+		<li>31 plain</li>
+	</ul>
+
+</body>
+</html>
