@@ -1,0 +1,11 @@
+Andres Giesemann
+SQL commands
+
+1. create database CHEESECAKE;
+2. use CHEESECAKE
+3. create table ORDERS (ORDERID int, MONTH char(3), DAY int, QUANTITY int, TOPPING enum("plain", "chocolate", "cherry"), NOTES varchar(512));
+4. describe ORDERS;
+5. interlude
+6. select count(*) from ORDERS;
+7. select count(*) from ORDERS where MONTH='FEB' and TOPPING='plain';
+8. insert into ORDERS (ORDERID, MONTH, DAY, QUANTITY, TOPPING, NOTES) values(200, "DEC", 13, 2, "cherry", "what is december 13th without cheesecake tho");
