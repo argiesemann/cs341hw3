@@ -16,15 +16,40 @@ $(document).ready(function () {
 
             // get the text of the selected month
             var newMonthText = $("#monthDataSelector").text();
+            var textObject = { text: newMonthText };
 
             // send that text via POST, update order stats with info from response JSON
-            $.post('/orders', newMonthText, function(responseData) {
+            $.post('/orders', textObject, function(responseData) {
                 
                 var incomingJson = $(responseData);
 
-                var cherryStats = incomingJson[0].quantity + " " + incomingJson[0].topping;
-                var chocolateStats = incomingJson[1].quantity + " " + incomingJson[1].topping;
-                var plainStats = incomingJson[2].quantity + " " + incomingJson[2].topping;
+                console.log("" + incomingJson);
+
+                var cherryCount = 0;
+                var plainCount = 0;
+                var chocolateCount = 0;
+
+                var i;
+
+                for (i = 0; i < incomingJson.length; i++) {
+                    
+                    if (incomingJson.TOPPING == "cherry") {
+                        cherryCount++;
+                    }
+
+                    else if (incomingJson.TOPPING == "plain") {
+                        plainCount++;
+                    }
+
+                    else if (incomingJson.TOPPING == "chocolate") {
+                        chocolateCount++;
+                    }
+
+                }
+
+                var cherryStats = cherryCount + " cherry";
+                var chocolateStats = chocolateCount + " chocolate";
+                var plainStats = plainCount + " plain";
 
                 $("#cherryCount").text(cherryStats);
                 $("#plainCount").text(plainStats);
