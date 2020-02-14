@@ -21,28 +21,26 @@ $(document).ready(function () {
             // send that text via POST, update order stats with info from response JSON
             $.post('/orders', textObject, function(responseData) {
                 
-                var incomingJson = $(responseData);
-
-                console.log("" + incomingJson);
+                var incomingJson = responseData;
 
                 var cherryCount = 0;
                 var plainCount = 0;
                 var chocolateCount = 0;
 
-                var i;
-
-                for (i = 0; i < incomingJson.length; i++) {
+                //iterate through the objects returned and count number of cheesecakes
+                //with each topping option
+                for (var i = 0; i < incomingJson.length; i++) {
                     
-                    if (incomingJson.TOPPING == "cherry") {
-                        cherryCount++;
+                    if (incomingJson[i].TOPPING == "cherry") {
+                        cherryCount += incomingJson[i].QUANTITY;
                     }
 
-                    else if (incomingJson.TOPPING == "plain") {
-                        plainCount++;
+                    else if (incomingJson[i].TOPPING == "plain") {
+                        plainCount += incomingJson[i].QUANTITY;
                     }
 
-                    else if (incomingJson.TOPPING == "chocolate") {
-                        chocolateCount++;
+                    else if (incomingJson[i].TOPPING == "chocolate") {
+                        chocolateCount += incomingJson[i].QUANTITY;
                     }
 
                 }
@@ -50,7 +48,8 @@ $(document).ready(function () {
                 var cherryStats = cherryCount + " cherry";
                 var chocolateStats = chocolateCount + " chocolate";
                 var plainStats = plainCount + " plain";
-
+                
+                //update the html to reflect new information
                 $("#cherryCount").text(cherryStats);
                 $("#plainCount").text(plainStats);
                 $("#chocolateCount").text(chocolateStats);

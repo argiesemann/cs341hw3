@@ -5,7 +5,7 @@ var express = require('express');
 var router = express.Router();
 var dbms = require('./dbms');
 
-/* part 1: GET */
+//default get for HW4
 router.get('/', function (req, res) {
 
     var orderList = [
@@ -17,24 +17,17 @@ router.get('/', function (req, res) {
     res.send(orderList);
 });
 
-/* part 2: POST */
+//handles post requests from month selector. Queries a SQL
+//database for all rows with the user-specified month
 router.post('/', function (req, res) {
 
-    /*var month = req.body.text;
+    var month = req.body.text;
     console.log("" + month);
 
-    dbms.dbquery('select * from ORDERS where MONTH=' + month + ';', function (error, results) {
+    dbms.dbquery('select * from ORDERS where MONTH=\'' + month + '\';', function (error, results) {
         var orderList = results;
         res.send(orderList);
-    });*/
-
-    var defaultOrder = [
-        { TOPPING: "cherry", QUANTITY: "2" },
-        { TOPPING: "chocolate", QUANTITY: "6" },
-        { TOPPING: "plain", QUANTITY: "3" }
-    ];
-
-    res.send(defaultOrder);
+    });
 });
 
 module.exports = router;

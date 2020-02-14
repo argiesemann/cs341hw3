@@ -38,6 +38,10 @@ $(document).ready(function () {
 
             $("#thisOrderInfo").show();
 
+            var orderDescription = { TOPPING: topping, QUANTITY: quantity, NOTES: notes };
+
+            $.post('/neworder', orderDescription);
+
         }
     });
 
