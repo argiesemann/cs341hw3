@@ -38,8 +38,9 @@ $(document).ready(function () {
 
             $("#thisOrderInfo").show();
 
+            //group order information into an object and pass it to neworder.js
+            //this order info will get inserted into the database
             var orderDescription = { TOPPING: topping, QUANTITY: quantity, NOTES: notes };
-
             $.post('/neworder', orderDescription);
 
         }
